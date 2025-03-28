@@ -3,21 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lost & Found Portal</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lost & Found Portal | Reuniting People with Their Belongings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
-    <h1>Lost & Found Portal</h1>
-    
-    <form id="itemForm">
-        <input type="text" id="title" placeholder="Item Title" required>
-        <input type="text" id="description" placeholder="Description" required>
-        <input type="email" id="contact" placeholder="Your Email" required>
-        <button type="submit">Submit</button>
-    </form>
+    <!-- Navigation Bar -->
+    <header class="sticky-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-search-location"></i>
+                <h1>Lost & Found Portal</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#report"><i class="fas fa-edit"></i> Report Item</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Login</a></li>
+                    <li><a href="#" class="cta-button">Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
 
-    <h2>Lost & Found Items</h2>
-    <ul id="itemsList"></ul>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Reuniting People with Their Lost Belongings</h2>
+                <p>Search thousands of lost and found items or report something you've found</p>
+                
+                <form class="search-form">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search for items (wallet, phone, keys...)">
+                        <button type="submit"><i class="fas fa-search"></i> Search</button>
+                    </div>
+                    <div class="search-filters">
+                        <select>
+                            <option value="">All Categories</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="wallets">Wallets & IDs</option>
+                            <option value="jewelry">Jewelry</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="keys">Keys</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <select>
+                            <option value="">All Locations</option>
+                            <option value="downtown">Downtown</option>
+                            <option value="campus">University Campus</option>
+                            <option value="park">City Parks</option>
+                            <option value="transport">Public Transport</option>
+                        </select>
+                    </div>
+                </form>
+                
+                <div class="hero-buttons">
+                    <a href="#report" class="cta-button lost-btn"><i class="fas fa-exclamation-circle"></i> Report Lost Item</a>
+                    <a href="#report" class="cta-button found-btn"><i class="fas fa-check-circle"></i> Report Found Item</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="hero-image.png" alt="Happy person finding lost item">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <h3>15,327+</h3>
+                <p>Items Reunited</p>
+            </div>
+            <div class="stat-item">
+                <h3>2,891+</h3>
+                <p>Happy Users</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Active Support</p>
+            </div>
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>Success Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Listings -->
+    <section class="listings">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recently Reported Items</h2>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="items-grid">
+                <div class="item-card">
+                    <div class="card-image">
+                        <img src="item1.jpg" alt="Lost Wallet">
+                        <span class="status-badge lost">LOST</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Black Leather Wallet</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Central Park</p>
+                        <p class="date"><i class="far fa-calendar-alt"></i> March 28, 2025</p>
+                        <p class="description">Contains credit cards and ID. Reward offered for return.</p>
+                        <div class="card-footer">
+                            <button class="details-btn"><i class="fas fa-info-circle"></i> View Details</button>
+                            <button class="claim-btn"><i class="fas fa-hand-holding-heart"></i> I Found This</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="item-card">
+                    <div class="card-image">
+                        <img src="item2.jpg" alt="Lost Phone">
+                        <span class="status-badge found">FOUND</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>iPhone 13 (Space Gray)</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Metro Station</p>
+                        <p class="date"><i class="far fa-calendar-alt"></i> March 27, 2025</p>
+                        <p class="description">Found near ticket counter. Has blue case with star pattern.</p>
+                        <div class="card-footer">
+                            <button class="details-btn"><i class="fas fa-info-circle"></i> View Details</button>
+                            <button class="claim-btn"><i class="fas fa-hand-holding-heart"></i> This Is Mine</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="item-card">
+                    <div class="card-image">
+                        <img src="item3.jpg" alt="Lost Keys">
+                        <span class="status-badge found">FOUND</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Set of Car Keys</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Main Street Cafe</p>
+                        <p class="date"><i class="far fa-calendar-alt"></i> March 26, 2025</p>
+                        <p class="description">Toyota key fob with 3 other keys on a red keychain.</p>
+                        <div class="card-footer">
+                            <button class="details-btn"><i class="fas fa-info-circle"></i> View Details</button>
+                            <button class="claim-btn"><i class="fas fa-hand-holding-heart"></i> This Is Mine</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <i class="fas fa-search"></i>
+                    <h3>Search or Report</h3>
+                    <p>Look for your lost item or report something you found</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Verify Details</h3>
+                    <p>We'll help match your item with potential owners/finders</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <i class="fas fa-handshake"></i>
+                    <h3>Get Reunited</h3>
+                    <p>Safely arrange return of your lost belongings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Lost/Found Form -->
+    <section class="report-form" id="report">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Report a Lost or Found Item</h2>
+                    <div class="form-tabs">
+                        <button class="tab-btn active" data-tab="lost-tab">Lost Item</button>
+                        <button class="tab-btn" data-tab="found-tab">Found Item</button>
+                    </div>
+                </div>
+                
+                <form id="lost-tab" class="tab-content active">
+                    <div class="form-group">
+                        <label for="item-name">What did you lose?*</label>
+                        <input type="text" id="item-name" placeholder="e.g., Black Leather Wallet" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="lost-date">When did you lose it?*</label>
+                            <input type="date" id="lost-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lost-location">Where did you lose it?*</label>
+                            <input type="text" id="lost-location" placeholder="e.g., Central Park, near fountain" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lost-description">Description*</label>
+                        <textarea id="lost-description" placeholder="Provide details like color, brand, size, distinguishing features, contents (if wallet/bag), etc." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lost-image">Upload Photos</label>
+                        <div class="file-upload">
+                            <input type="file" id="lost-image" accept="image/*">
+                            <label for="lost-image"><i class="fas fa-camera"></i> Choose File</label>
+                            <span class="file-name">No file chosen</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lost-contact">Your Contact Information*</label>
+                        <input type="text" id="lost-contact" placeholder="Email or phone number where you can be reached" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="lost-reward"> I'm offering a reward for return
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Lost Item Report</button>
+                </form>
+                
+                <form id="found-tab" class="tab-content">
+                    <!-- Similar structure for found item form -->
+                    <!-- Content would be similar but tailored for found items -->
+                </form>
+            </div>
+            
+            <div class="form-image">
+                <img src="report-image.png" alt="Reporting lost item">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Success Stories</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>I thought I'd never see my grandmother's ring again, but thanks to this portal, a kind stranger found it and returned it to me within 2 days!</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="author">
+                        <img src="user1.jpg" alt="Sarah J.">
+                        <h4>Sarah J.</h4>
+                        <p>Reunited with lost heirloom</p>
+                    </div>
+                </div>
+                <!-- More testimonials would go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to receive notifications when items matching your description are reported</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-search-location"></i>
+                        <h3>Lost & Found Portal</h3>
+                    </div>
+                    <p>Helping people reunite with their lost belongings since 2020.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#report">Report Item</a></li>
+                        <li><a href="#">Browse Items</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Electronics</a></li>
+                        <li><a href="#">Wallets & IDs</a></li>
+                        <li><a href="#">Jewelry</a></li>
+                        <li><a href="#">Keys</a></li>
+                        <li><a href="#">Clothing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> help@lostfoundportal.com</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Finder St, City</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lost & Found Portal. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
